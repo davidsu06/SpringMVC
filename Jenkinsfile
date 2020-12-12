@@ -5,7 +5,7 @@ pipeline {
     stage('Package') {
         steps {
             powershell label:'', script:"""
-                cd SpringMVC
+                cd SpringMVC/
                 mvn package -DskipTests=true
             """
         }
@@ -14,7 +14,7 @@ pipeline {
     stage('Deploy') {
         steps {
             powershell label:'', script:"""
-                cd target
+                cd target/
                 copy HelloWorld.war C:/Users/juanj/Documents/apache-tomcat-9.0.41/webapps
             """
         }
