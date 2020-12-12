@@ -5,7 +5,6 @@ pipeline {
     stage('Package') {
         steps {
             powershell label:'', script:"""
-                cd SpringMVC/
                 mvn package -DskipTests=true
             """
         }
